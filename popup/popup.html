@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InstaBlock</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-wrapper">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.1.8-1.3-4.5-2.7V7z"/>
+          </svg>
+        </div>
+        <div class="logo-meta">
+          <h1 class="logo-title">InstaBlock</h1>
+          <span class="logo-subtitle">Feed, Stories & Reels Guard</span>
+        </div>
+      </div>
+      <div id="status-pill" class="status-pill status-idle">Ready</div>
+    </header>
+
+    <!-- Real-time Status Card -->
+    <section class="card status-card">
+      <div class="status-info-row">
+        <span class="status-label">Current State</span>
+        <span id="state-text" class="status-value">Ready to Browse</span>
+      </div>
+
+      <div class="timer-display-box">
+        <span class="timer-label" id="timer-label">SESSION TIME</span>
+        <span class="timer-value" id="timer-value">5:00</span>
+      </div>
+
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="status-progress-fill"></div>
+      </div>
+
+      <p class="status-hint" id="status-hint">
+        Visit Instagram Feed, Stories, Reels, or a profile to begin your 5-minute session.
+      </p>
+    </section>
+
+    <!-- Configuration Settings -->
+    <section class="card settings-card">
+      <div class="settings-header">
+        <h2 class="card-title">Settings</h2>
+        <div id="settings-locked-badge" class="settings-lock-badge hidden">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+          </svg>
+          <span id="settings-locked-text">Locked</span>
+        </div>
+      </div>
+      
+      <div class="input-group">
+        <label for="session-duration">
+          <span>Session Duration</span>
+          <span class="unit-tag">Minutes</span>
+        </label>
+        <div class="input-wrapper">
+          <input type="number" id="session-duration" min="0.1" max="60" value="5" step="0.1">
+          <span class="input-suffix">mins</span>
+        </div>
+        <small class="field-hint">Max browsing duration across Feed, Stories & Reels (0.1–60 mins)</small>
+      </div>
+
+      <div class="input-group">
+        <label for="cooldown-duration">
+          <span>Cooldown Period</span>
+          <span class="unit-tag">Minutes</span>
+        </label>
+        <div class="input-wrapper">
+          <input type="number" id="cooldown-duration" min="0.1" max="1440" value="60" step="0.1">
+          <span class="input-suffix">mins</span>
+        </div>
+        <small class="field-hint">Required break before next session (0.1–1440 mins, default: 60)</small>
+      </div>
+
+      <button id="save-btn" class="btn btn-primary">
+        <span>Save Settings</span>
+      </button>
+      <div id="save-toast" class="toast hidden">✓ Settings saved successfully</div>
+    </section>
+
+    <!-- Action Tools -->
+    <section class="action-section">
+      <button id="reset-btn" class="btn btn-secondary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+        </svg>
+        <span id="reset-btn-text">Reset Session Duration and Cooldown Period</span>
+      </button>
+      <small id="reset-locked-hint" class="field-hint text-center hidden">🔒 Reset is locked during active session & cooldown</small>
+
+      <a href="https://onlychai.neocities.org/support?name=Kavin%20Kishore&upi=deadeyegam%40okhdfcbank#" target="_blank" rel="noopener noreferrer" class="btn btn-support" id="support-btn">
+        <span>Support Me! ❤️</span>
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>InstaBlock • Chromium & Edge Compatible</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

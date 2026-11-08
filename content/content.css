@@ -1,0 +1,353 @@
+/* ==========================================================================
+   InstaBlock - Content Stylesheet
+   shadcn/ui Dark Mode Aesthetic
+   ========================================================================== */
+
+/* ---------- Floating Timer HUD ---------- */
+#instablock-hud,
+#instablock-hud * {
+  box-sizing: border-box !important;
+}
+
+#instablock-hud {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 2147483640;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 188px;
+  min-height: 250px;
+  padding: 22px 18px;
+  background: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.7);
+  color: #fafafa;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  user-select: none;
+  cursor: grab;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+#instablock-hud:active {
+  cursor: grabbing;
+}
+
+#instablock-hud.hud-warning {
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+#instablock-hud.hud-warning .instablock-hud-time {
+  color: #fbbf24;
+}
+
+#instablock-hud.hud-danger {
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+#instablock-hud.hud-danger .instablock-hud-time {
+  color: #f87171;
+}
+
+.instablock-hud-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  color: #a1a1aa;
+  flex-shrink: 0;
+}
+
+.instablock-hud-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.instablock-hud-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.instablock-hud-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #71717a;
+  line-height: 1;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.instablock-hud-time {
+  font-size: 34px;
+  font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  line-height: 1.1;
+}
+
+.instablock-hud-min-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #71717a;
+  padding: 3px;
+  margin-left: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+}
+
+.instablock-hud-min-btn:hover {
+  color: #fafafa;
+  background-color: #18181b;
+  border-color: #27272a;
+}
+
+.instablock-hud.minimized .instablock-hud-content {
+  display: none;
+}
+
+.instablock-hud.minimized {
+  flex-direction: row;
+  width: auto;
+  min-height: 0;
+  padding: 10px 14px;
+  gap: 10px;
+}
+
+.instablock-hud.minimized .instablock-hud-time {
+  font-size: 16px;
+}
+
+.instablock-hud.minimized .instablock-hud-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.instablock-hud.minimized .instablock-hud-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* ---------- Fullscreen Blocker Overlay ---------- */
+#instablock-overlay,
+#instablock-overlay * {
+  box-sizing: border-box !important;
+}
+
+#instablock-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647 !important;
+  background: rgba(9, 9, 11, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #fafafa;
+  padding: 24px;
+  animation: instablock-fade-in 0.25s ease-out;
+  overflow-y: auto;
+}
+
+@keyframes instablock-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.instablock-card {
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+  background: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.instablock-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fafafa;
+}
+
+.instablock-badge-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #fafafa;
+}
+
+.instablock-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: #fafafa;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.instablock-subtitle {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #a1a1aa;
+  margin: 0;
+}
+
+.instablock-timer-box {
+  width: 100%;
+  background: #121215;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.instablock-timer-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #71717a;
+  margin: 0 0 12px 0;
+  line-height: 1;
+}
+
+.instablock-timer-display {
+  font-size: 42px;
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  color: #fafafa;
+  margin: 0 0 8px 0;
+  line-height: 1;
+}
+
+.instablock-unlock-at {
+  color: #a1a1aa;
+  font-size: 12px;
+  margin: -6px 0 16px;
+}
+
+.instablock-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #27272a;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.instablock-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #fafafa;
+  border-radius: 9999px;
+  transition: width 1s linear;
+}
+
+.instablock-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 10px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 6px 0 0 0 !important;
+  padding: 0 !important;
+}
+
+.instablock-btn-primary {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 10px 16px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  background: #fafafa !important;
+  color: #09090b !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  font-family: inherit !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease, opacity 0.15s ease !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  line-height: normal !important;
+  gap: 8px !important;
+}
+
+.instablock-btn-primary:hover {
+  background: #e4e4e7 !important;
+}
+
+.instablock-btn-primary svg {
+  flex-shrink: 0 !important;
+  display: block !important;
+  fill: #09090b !important;
+}
+
+.instablock-btn-primary span {
+  display: inline-block !important;
+  line-height: 1.2 !important;
+}
+
+.instablock-tip {
+  font-size: 12px;
+  color: #71717a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Prevent body scrolling when blocked */
+body.instablock-locked {
+  overflow: hidden !important;
+}
