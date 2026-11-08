@@ -14,7 +14,7 @@ A Chromium extension that limits Instagram browsing while keeping Direct Message
 - Adjustable session (0.1–60 min; default 5) and cooldown (0.1–1440 min; default 60).
 - Draggable, minimizable timer and live cooldown screen.
 
-## Install
+## ⬇️ Install
 
 1. Download and extract the ZIP from **Code → Download ZIP**, or clone:
    ```sh
