@@ -2,7 +2,7 @@
 
 A Chromium extension that limits Instagram browsing while keeping Direct Messages accessible.
 
-## Philosophy and mechanism
+## 💡 Philosophy and mechanism
 
 <u>**Stay connected without endless scrolling.**</u> InstaBlock keeps DMs available and gives browsing surfaces one shared time limit. The timer runs while a monitored Instagram page is active and visible, pauses in DMs or when the browser loses focus, then resumes when you return. When time runs out, browsing is blocked until cooldown ends. State is stored locally and shared across tabs.
 
@@ -18,7 +18,7 @@ A Chromium extension that limits Instagram browsing while keeping Direct Message
 
 1. Download and extract the ZIP from **Code → Download ZIP**, or clone:
    ```sh
-   git clone https://github.com/<your-username>/insta-block.git
+   git clone https://github.com/KavinK0001/insta-block.git
    ```
 2. Open `chrome://extensions`, `brave://extensions`, or `edge://extensions`.
 3. Enable **Developer mode** and choose **Load unpacked**.
@@ -30,6 +30,6 @@ To update, replace the files and click **Reload** on the extensions page.
 
 Set short session and cooldown values in the popup, then browse Instagram. When the session ends, monitored pages are blocked for the cooldown; DMs remain available.
 
-## Browser support
+## 🌐 Browser support
 
-Chrome, Brave, and Microsoft Edge. Firefox is not currently supported.
+Any Chromium browser should work. Tested on Google Chrome and Microsoft Edge.
