@@ -1,6 +1,6 @@
 # InstaBlock
 
-A Chromium extension that limits Instagram browsing while keeping Direct Messages accessible.
+**Cut down on Instagram scrolling without missing your DMs.** InstaBlock lets you set a browsing limit, pauses the timer when you’re away, and blocks monitored pages during cooldown.
 
 ## 💡 Philosophy and mechanism
 

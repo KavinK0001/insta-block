@@ -375,25 +375,28 @@ body {
 }
 
 .btn-support {
-  background: var(--muted);
-  border: 1px solid var(--card-border);
-  color: var(--text-main);
+  background: #fbbf24;
+  border: 1px solid #f59e0b;
+  color: #09090b;
   text-decoration: none;
   font-size: 10px;
-  font-weight: 500;
-  padding: 4px 7px;
+  font-weight: 700;
+  padding: 5px 9px;
   border-radius: 6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  transition: all 0.15s ease;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .btn-support:hover {
-  background: #27272a;
-  border-color: #3f3f46;
-  color: #ffffff;
+  background: #f59e0b;
+  border-color: #d97706;
+  color: #09090b;
+  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3);
+  transform: translateY(-1px);
 }
 
 .toast {
