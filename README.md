@@ -2,6 +2,10 @@
 
 A Chromium extension that limits Instagram browsing while keeping Direct Messages accessible.
 
+## Philosophy and mechanism
+
+<u>**Stay connected without endless scrolling.**</u> InstaBlock keeps DMs available and gives browsing surfaces one shared time limit. The timer runs while a monitored Instagram page is active and visible, pauses in DMs or when the browser loses focus, then resumes when you return. When time runs out, browsing is blocked until cooldown ends. State is stored locally and shared across tabs.
+
 ## Features
 
 - Shared timer for Feed, Explore, Stories, Reels, and profiles.
@@ -9,10 +13,6 @@ A Chromium extension that limits Instagram browsing while keeping Direct Message
 - Cooldown blocks browsing after the session limit.
 - Adjustable session (0.1–60 min; default 5) and cooldown (0.1–1440 min; default 60).
 - Draggable, minimizable timer and live cooldown screen.
-
-## Philosophy and mechanism
-
-<u>**Stay connected without endless scrolling.**</u> InstaBlock keeps DMs available and gives browsing surfaces one shared time limit. The timer runs while a monitored Instagram page is active and visible, pauses in DMs or when the browser loses focus, then resumes when you return. When time runs out, browsing is blocked until cooldown ends. State is stored locally and shared across tabs.
 
 ## Install
 
