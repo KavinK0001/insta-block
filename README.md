@@ -1,49 +1,35 @@
 # InstaBlock
 
-A Chromium extension that limits time spent browsing Instagram while keeping Direct Messages accessible.
+A Chromium extension that limits Instagram browsing while keeping Direct Messages accessible.
 
 ## Features
 
-- Shared session timer across Feed, Explore, Stories, Reels, and profiles.
-- Timer pauses in Direct Messages and when the browser is unfocused.
-- Cooldown blocks monitored browsing after the session limit. DMs remain available.
-- Draggable, minimizable timer and a cooldown screen with the unlock time.
-- Configurable session duration (0.1–60 minutes; default 5) and cooldown (0.1–1440 minutes; default 60).
-- Settings and reset are locked during a session or cooldown.
+- Shared timer for Feed, Explore, Stories, Reels, and profiles.
+- Timer pauses in DMs and when the browser is unfocused.
+- Cooldown blocks browsing after the session limit.
+- Adjustable session (0.1–60 min; default 5) and cooldown (0.1–1440 min; default 60).
+- Draggable, minimizable timer and live cooldown screen.
+
+## Philosophy and mechanism
+
+<u>**Stay connected without endless scrolling.**</u> InstaBlock keeps DMs available and gives browsing surfaces one shared time limit. The timer runs while a monitored Instagram page is active and visible, pauses in DMs or when the browser loses focus, then resumes when you return. When time runs out, browsing is blocked until cooldown ends. State is stored locally and shared across tabs.
 
 ## Install
 
-1. Download and extract the repository ZIP from **Code → Download ZIP**, or clone it:
+1. Download and extract the ZIP from **Code → Download ZIP**, or clone:
    ```sh
    git clone https://github.com/<your-username>/insta-block.git
    ```
-2. Open your browser’s extensions page:
-   - Chrome: `chrome://extensions`
-   - Brave: `brave://extensions`
-   - Edge: `edge://extensions`
-3. Enable **Developer mode**, then select **Load unpacked**.
-4. Choose the extracted project folder containing `manifest.json`.
-5. Optionally pin InstaBlock from the browser’s extensions menu.
+2. Open `chrome://extensions`, `brave://extensions`, or `edge://extensions`.
+3. Enable **Developer mode** and choose **Load unpacked**.
+4. Select the extracted folder containing `manifest.json`.
 
-To update, replace the project files and click **Reload** on the extensions page. Keep the folder in place.
+To update, replace the files and click **Reload** on the extensions page.
 
 ## Test
 
-1. Open the extension popup and set short session and cooldown values, such as 1 minute each.
-2. Visit Instagram and browse Feed, Stories, or Reels. The shared timer starts when you enter a monitored section.
-3. When time runs out, monitored browsing is blocked until the cooldown ends. Direct Messages remain available.
-
-## Project structure
-
-```text
-manifest.json              Extension configuration
-background/service-worker.js  Shared timer and state management
-content/content.js          Instagram route handling and timer UI
-content/content.css         Timer and cooldown screen styles
-popup/                      Settings and status popup
-icons/                      Extension icons
-```
+Set short session and cooldown values in the popup, then browse Instagram. When the session ends, monitored pages are blocked for the cooldown; DMs remain available.
 
 ## Browser support
 
-Chrome, Brave, and Microsoft Edge are supported. Firefox support is not currently available.
+Chrome, Brave, and Microsoft Edge. Firefox is not currently supported.
