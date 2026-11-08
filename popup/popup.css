@@ -50,6 +50,12 @@ body {
   padding-bottom: 2px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .logo-wrapper {
   display: flex;
   align-items: center;
@@ -373,16 +379,15 @@ body {
   border: 1px solid var(--card-border);
   color: var(--text-main);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
-  padding: 8px 12px;
+  padding: 4px 7px;
   border-radius: 6px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  white-space: nowrap;
   transition: all 0.15s ease;
-  margin-top: 2px;
 }
 
 .btn-support:hover {
