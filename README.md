@@ -16,7 +16,7 @@
 
 ## ⬇️ Install guide
 
-1. Download and extract the ZIP from **Code → Download ZIP**, or clone:
+1. Download and extract the ZIP from **Code → Download ZIP**, which is [this link](https://github.com/KavinK0001/insta-block/archive/refs/heads/main.zip), or clone:
    ```sh
    git clone https://github.com/KavinK0001/insta-block.git
    ```
